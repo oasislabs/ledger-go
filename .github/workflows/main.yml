@@ -15,7 +15,12 @@ jobs:
           export PATH=$PATH:$GOBIN
           mkdir -p $GOBIN
 
+          export PROJDIR=$GOPATH/src/github.com/oasislabs
+          export SRCDIR=$PROJDIR/ledger-go
+          mkdir -p "${PROJDIR}"
+          ln -s "$(pwd)" "${SRCDIR}"
+          cd "${SRCDIR}"
           go get -v -u github.com/golang/dep/cmd/dep
           dep ensure -v
-          go build ledger.go adpuWrapper.go
+          go build ledger.go apduWrapper.go
           go test
