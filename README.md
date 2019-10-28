@@ -1,5 +1,8 @@
 # ledger-go
 
+[![Actions Status](https://github.com/oasislabs/ledger-go/workflows/CI/badge.svg)](https://github.com/oasislabs/ledger-go/actions)
+
+
 This project provides a library to connect to ledger devices.
 
 It handles USB (HID) communication and APDU encapsulation.
