@@ -10,6 +10,10 @@ jobs:
       - uses: actions/checkout@v1
       - name: Build and test
         run: |
+          export GOPATH=/home/go
+          export GOBIN=$GOPATH/bin
+          export PATH=$PATH:$GOBIN
+
           go get -v -u github.com/golang/dep/cmd/dep
           dep ensure -v
           go build ledger.go adpuWrapper.go
