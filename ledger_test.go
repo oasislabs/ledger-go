@@ -44,6 +44,7 @@ func Test_FindLedger(t *testing.T) {
 		t.Fatalf("Error: %s", err.Error())
 	}
 	assert.NotNil(t, ledger)
+	ledger.Close()
 }
 
 func Test_BasicExchange(t *testing.T) {
@@ -66,8 +67,10 @@ func Test_BasicExchange(t *testing.T) {
 			t.Fatalf("Error: %s", err.Error())
 		}
 
-		assert.Equal(t, 4, len(response))
+		assert.Equal(t, 5, len(response))
+		t.Logf("response: %v\n", response)
 	}
+	ledger.Close()
 }
 
 func Test_LongExchange(t *testing.T) {
@@ -96,4 +99,5 @@ func Test_LongExchange(t *testing.T) {
 	}
 
 	assert.Equal(t, 65, len(response))
+	ledger.Close()
 }

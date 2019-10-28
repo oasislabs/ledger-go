@@ -79,6 +79,7 @@ func FindLedger() (*Ledger, error) {
 			if err == nil {
 				return NewLedger(device), nil
 			}
+			return nil, err
 		}
 	}
 
