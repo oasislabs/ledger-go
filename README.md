@@ -39,3 +39,8 @@ To run the tests in `ledger_test.go`, connect a ledger device to the computer, e
 ```
 go test -tags ledger_device
 ```
+
+For tests against the Ethereum Ledger App, make sure that the Ethereum App is installed on the device, connect it, and navigate to the Ethereum app. Then, run the following:
+```
+go test -tags "ledger_device eth_ledger_app"
+```
